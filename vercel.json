@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/gui/(.*)",
+      "destination": "/Phase_5_Chatbot_Frontend_UI/$1"
+    },
+    {
+      "source": "/gui",
+      "destination": "/Phase_5_Chatbot_Frontend_UI/index.html"
+    },
+    {
+      "source": "/chat/(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/status",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/history/(.*)",
+      "destination": "/api/index"
+    }
+  ],
+  "functions": {
+    "api/index.py": {
+      "runtime": "vercel-python@0.0.1"
+    }
+  }
+}

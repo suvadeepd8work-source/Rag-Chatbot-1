@@ -1,0 +1,21 @@
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+
+# Database
+Phase_2_Vector_Database/chroma_db/
+
+# Logs
+*.log
+error.log
+
+# OS
+.DS_Store
+Thumbs.db

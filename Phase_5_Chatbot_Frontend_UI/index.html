@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextLeap ChatBot Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Chat Bot</h2>
+                <div id="last-updated" style="font-size: 0.65rem; color: var(--text-secondary); margin-top: 5px;">Last Updated: Loading...</div>
+            </div>
+            <div class="chat-list">
+                <div class="chat-item active">
+                    <div class="avatar">NL</div>
+                    <div class="chat-info">
+                        <h4>NextLeap Assistant</h4>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary);">Online</p>
+                    </div>
+                </div>
+                <!-- Dynamic chats could go here -->
+            </div>
+        </aside>
+
+        <!-- Main Chat -->
+        <main class="main-chat">
+            <header class="chat-header">
+                <div class="header-user">
+                    <h3 id="session-name">NextLeap Support</h3>
+                </div>
+                <div class="header-actions">
+                    <i data-lucide="video" size="20"></i>
+                    <i data-lucide="phone" size="20"></i>
+                    <i data-lucide="more-horizontal" size="20"></i>
+                </div>
+            </header>
+
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot">
+                    <div class="message-bubble">
+                        Hello! I'm your NextLeap Assistant. How can I help you with our courses today?
+                    </div>
+                    <div class="message-meta">09:00 AM</div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <form id="chat-form" class="input-wrapper">
+                    <i data-lucide="plus" size="20" style="color: var(--text-secondary);"></i>
+                    <input type="text" id="user-input" placeholder="Say something..." autocomplete="off">
+                    <div class="input-icons">
+                        <i data-lucide="smile" size="20" style="color: var(--text-secondary); margin-right: 10px;"></i>
+                        <i data-lucide="image" size="20" style="color: var(--text-secondary); margin-right: 10px;"></i>
+                    </div>
+                    <button type="submit" class="send-btn">
+                        <i data-lucide="send" size="18"></i>
+                    </button>
+                </form>
+            </div>
+        </main>
+
+        <!-- Right Panel -->
+        <aside class="right-panel">
+            <div class="section">
+                <h3 class="section-title">Suggestions</h3>
+                <div id="suggestions-list">
+                    <div class="suggestion-card">
+                        <h4>Product Management</h4>
+                        <p>16 weeks • Fellowship</p>
+                        <button class="btn-add">View Details</button>
+                    </div>
+                    <div class="suggestion-card">
+                        <h4>UX Design</h4>
+                        <p>4 months • Fellowship</p>
+                        <button class="btn-add">View Details</button>
+                    </div>
+                    <div class="suggestion-card">
+                        <h4>Generative AI</h4>
+                        <p>10 weeks • Bootcamp</p>
+                        <button class="btn-add">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">Notifications</h3>
+                <div class="message-meta">No new notifications</div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

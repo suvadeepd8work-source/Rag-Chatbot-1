@@ -1,0 +1,43 @@
+name: Daily Knowledge Update
+
+on:
+  schedule:
+    # 10:00 AM IST is 04:30 AM UTC
+    - cron: '30 4 * * *'
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  update-knowledge-base:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        playwright install chromium
+
+    - name: Run Update Pipeline
+      env:
+        GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      run: |
+        python Phase_6_Automated_Scheduler/scheduler.py
+
+    - name: Commit and Push Changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add Phase_1_Data_Acquisition/scraped_data/
+        git add Phase_2_Vector_Database/course_chunks.json
+        git add metadata.json
+        git commit -m "chore: automated knowledge base update [skip ci]" || echo "No changes to commit"
+        git push

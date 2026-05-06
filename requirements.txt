@@ -1,0 +1,11 @@
+requests
+beautifulsoup4
+markdownify
+playwright
+schedule
+chromadb
+sentence-transformers
+groq
+python-dotenv
+fastapi
+uvicorn
