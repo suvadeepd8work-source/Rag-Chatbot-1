@@ -11,20 +11,15 @@
     },
     {
       "source": "/chat/(.*)",
-      "destination": "/api/main"
+      "destination": "/api/index"
     },
     {
       "source": "/status",
-      "destination": "/api/main"
+      "destination": "/api/index"
     },
     {
       "source": "/history/(.*)",
-      "destination": "/api/main"
+      "destination": "/api/index"
     }
-  ],
-  "functions": {
-    "api/main.py": {
-      "runtime": "python3.9"
-    }
-  }
+  ]
 }

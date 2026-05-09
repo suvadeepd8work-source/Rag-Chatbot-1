@@ -1,4 +1,4 @@
-# Vercel entry point
+# Vercel entry point (api/index.py)
 import sys
 import os
 
