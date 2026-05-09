@@ -1,3 +1,4 @@
+# Vercel entry point
 import sys
 import os
 

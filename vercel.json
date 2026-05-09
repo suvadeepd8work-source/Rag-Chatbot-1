@@ -1,5 +1,11 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "api/main.py",
+      "use": "@vercel/python"
+    }
+  ],
   "rewrites": [
     {
       "source": "/gui/(.*)",
@@ -11,20 +17,15 @@
     },
     {
       "source": "/chat/(.*)",
-      "destination": "/api/index"
+      "destination": "/api/main"
     },
     {
       "source": "/status",
-      "destination": "/api/index"
+      "destination": "/api/main"
     },
     {
       "source": "/history/(.*)",
-      "destination": "/api/index"
+      "destination": "/api/main"
     }
-  ],
-  "functions": {
-    "api/index.py": {
-      "runtime": "@vercel/python"
-    }
-  }
+  ]
 }
